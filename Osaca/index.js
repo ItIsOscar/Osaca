@@ -1,7 +1,7 @@
 
 import { navigation } from "./Moduls/Logic/navigation.js"
 import { linkCSS } from "./Moduls/Logic/linCSS.js"
-let linkHref = ["header", "ALL", "profil", "news", "mainSite", "personal", "createAccount", "taskBar"]
+let linkHref = ["header", "ALL", "profile", "news", "mainSite", "personal", "createAccount", "taskBar", "banner"]
 linkCSS(linkHref)
 import { createAccountWindows } from "./Moduls/HTMLCreater/Windows/CreateAccount.js"
 

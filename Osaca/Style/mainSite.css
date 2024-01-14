@@ -1,26 +1,12 @@
 
-.contentMain {
+.main_ {
     margin: 0 15% 0 15% ;
     font-weight: 100;
 }
 
-.welcome {
+.main_welcome {
     text-align: center;
     margin: 3% 0;
-}
-
-.banner {
-    margin: 0 7% 5% 7%;
-    height: 250px;
-    overflow: hidden;
-}
-.bannerContent {
-    display: flex;
-    width: 300%;
-}
-.blockMain {
-    display: flex;
-    align-items: center;
 }
 
 .main_discDiv {
@@ -53,7 +39,7 @@
 }
 
 @media screen and (max-width: 499px) {
-    .contentMain {
+    .main_content {
         margin: 0 10%;
         font-size: 14px;
     }
@@ -64,12 +50,11 @@
         width: 100%;
         margin-bottom: 2rem;
     }
-    .banner {
-        
+    .banner_ {
         color: white;
         margin: 0;
     }
-    .banner  img {
+    .banner_ img {
         /* filter: blur(2px); */
     }
     .blockText {

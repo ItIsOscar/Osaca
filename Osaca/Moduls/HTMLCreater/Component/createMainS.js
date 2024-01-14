@@ -16,8 +16,8 @@ function compDiscription(whoAppend,) {
 }
 
 export function createMainS() {
-    let content = createElementAndProperty("div", document.body, "contentMain")
-    createElementAndProperty('h2', content, "welcome", "textContent", "Добро пожаловать в Osaca Corp.")
+    let content = createElementAndProperty("div", document.body, "main_")
+    createElementAndProperty('h2', content, "main_welcome", "textContent", "Добро пожаловать в Osaca Corp.")
     let result = createHTMLBanner(content)
     setTimeout(bannerLogic(result.blockPages, result.banner), 5000)
     createElementAndProperty("h2", content, undefined, "textContent", "Наши преимущества")
