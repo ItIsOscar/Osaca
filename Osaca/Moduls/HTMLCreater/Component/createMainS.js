@@ -18,8 +18,11 @@ function compDiscription(whoAppend,) {
 export function createMainS() {
     let content = createElementAndProperty("div", document.body, "main_")
     createElementAndProperty('h2', content, "main_welcome", "textContent", "Добро пожаловать в Osaca Corp.")
+    createElementAndProperty('h3', content, "main_welcome_disc", "textContent", "Osaca Corp. занимается разработкой программного обеспечения, поддержкой малых и средних бизнесов. Консультированием и автоматиазацией бизнес процессов внутри компания")
     let result = createHTMLBanner(content)
-    setTimeout(bannerLogic(result.blockPages, result.banner), 5000)
+    setInterval(() => {
+        bannerLogic(result.blockPages, result.banner)
+    }, 5000)
     createElementAndProperty("h2", content, undefined, "textContent", "Наши преимущества")
     let discDiv = createElementAndProperty("div", content, "main_discDiv")
     for(let current = 0; current < 3; current++) {
@@ -32,8 +35,8 @@ export function createMainS() {
         packForPanel.closeOrOpenPanel(logicIngridient.taskContent)
         logicIngridient.taskName.classList.toggle("main_taskNameIsOpen")
     })
-    
 }
+
     
 
 
