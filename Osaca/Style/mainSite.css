@@ -1,12 +1,25 @@
 
+
 .main_ {
     margin: 0 15% 0 15% ;
     font-weight: 100;
 }
 
 .main_welcome {
+    width: 500px;
+    font-size: 3rem;
     text-align: center;
-    margin: 3% 0;
+    text-wrap: wrap;
+    font-weight: 100;
+    font-family: sans-serif;
+    margin: 3% auto 2% auto;
+}
+.main_welcome_disc {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 100;
+    font-family: sans-serif;
+    margin: 3% auto 4% auto;
 }
 
 .main_discDiv {
@@ -24,11 +37,13 @@
 }
 
 .main_discBlock img {
-    margin-bottom: 2%;
+    margin-bottom: 5%;
 }
 
 .main_discBlock p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: sans-serif;
 }
 
 .main_currectTask {

@@ -25,14 +25,15 @@ export function  createHTMLBanner(content) {
     return result
 }
 
-export function bannerLogic(bannerBlocks, banner) {
-    bannerBlocks[banner.currentPage].scrollIntoView({
-        inline: "center",
-        behavior: "smooth",
-    })
-    if(banner.currentPage == bannerBlocks.length + 1) {
+export function bannerLogic(bannerBlocks, banner) { 
+    if(banner.currentPage == bannerBlocks.length ) {
         banner.currentPage = 1
     } else {
         banner.currentPage++
     }
+    bannerBlocks[banner.currentPage - 1].scrollIntoView({
+        inline: "center",
+        behavior: "smooth",
+    })
+    console.log(banner.currentPage)
 }
