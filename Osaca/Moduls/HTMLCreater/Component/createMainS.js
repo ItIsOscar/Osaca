@@ -12,7 +12,7 @@ import { packForPanel } from "../../Logic/FunctionalPanel.js";
 function compDiscription(whoAppend,) {
     let block = createElementAndProperty("div", whoAppend, "main_discBlock")
     createElementAndProperty("img", block, undefined, "", ``)
-    createElementAndProperty("p", block, undefined, "textContent", `вбыиф роиыф лов ыфивл рыфи ыви ыфи воыфи рворлыф ивор ыиво рофрывиф орвиыфо ррви ыив о врои ыфорв иыофлр иволрыфи волрыфи вори ыф ворфыи ворыфи ворыфи ворлыф иолыфр иворыф иворыф ивыф ыф олврыфи овлрифы олрви ыфолрв ио ирвфы`)
+    createElementAndProperty("p", block, undefined, "textContent", `sjuegjgjjgsjjgjgjsjgsjhhgsdhadsjhsahf`)
 }
 
 export function createMainS() {
