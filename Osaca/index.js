@@ -1,40 +1,30 @@
 
-import { navigation } from "./Moduls/Logic/navigation.js"
-import { linkCSS } from "./Moduls/Logic/linCSS.js"
-let linkHref = ["header", "ALL", "profile", "news", "mainSite", "personal", "createAccount", "taskBar", "banner"]
-linkCSS(linkHref)
-import { createAccountWindows } from "./Moduls/HTMLCreater/Windows/CreateAccount.js"
+import { Header } from "./Header/header.js"
+import { MainPage } from "./Main/main.js"
+import { News } from "./News/news.js"
+import { Personal } from "./Pesonal/personal.js"
+import { Profile } from "./Profile/profile.js"
 
-document.addEventListener("click", function(event) {
-    event.preventDefault()
-})
+import { TaskBar } from "./shared/components/taskBar/taskBar.js"
+
+import { navigation } from "./shared/logic/navigation.js"
+
+customElements.define("app-header", Header)
+customElements.define("app-main", MainPage)
+customElements.define("app-news", News)
+customElements.define("app-profile", Profile)
+customElements.define("app-personal", Personal)
+customElements.define("app-taskbar", TaskBar)
+
 navigation.siteStart()
 
-// butProfile.addEventListener("click", function() {
-//     createAccountWindows()
-//     console.log(logo)
-// })
+
+document.addEventListener("click", event => {
+    event.preventDefault()
+    if(event.target.id == "but") {
+        document.body.lastChild.remove()
+        navigation.generateSite(event.target.href)
+    }
+})
 
 window.addEventListener("popstate", navigation.popstateFunctional)
-
-butProfile.addEventListener("click", function() {
-    document.body.lastChild.remove()
-    navigation.CallFunctGuidePathName(butProfile.href)
-})
-butMainSite.addEventListener("click", function() {
-    document.body.lastChild.remove()
-    navigation.CallFunctGuidePathName(butMainSite.href)
-})
-butNews.addEventListener("click", function() {
-    document.body.lastChild.remove()
-    navigation.CallFunctGuidePathName(butNews.href)
-})
-butTasks.addEventListener("click", function() {
-    document.body.lastChild.remove()
-    navigation.CallFunctGuidePathName(butTasks.href)
-})
-butPersonal.addEventListener("click", function() {
-    document.body.lastChild.remove()
-    navigation.CallFunctGuidePathName(butPersonal.href)
-})
-console.log(butTasks)

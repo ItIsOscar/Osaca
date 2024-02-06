@@ -1,0 +1,79 @@
+
+.personal_leftBlock {
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+.first_container {
+    width: 100%;
+    height: 100%;
+}
+.second_container {
+    width: 80%;
+}
+.third_container {
+    width: 60%;
+}
+
+.personal_panel {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+
+.personal_managePost {
+    width: 100%;
+}
+
+.personal_subManagePost {
+    width: 80%;
+}
+
+.personal_workerPost {
+    width: 60%;
+}
+
+.first_contatinerContent {   
+    height: 100%;
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+}
+
+.personal_PanelPost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3%;
+}
+
+.personal_PanelPost h3 {
+    margin-left: 0.2rem;
+}
+
+.personal_manager {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A68080;
+    border-radius: 8px;
+    margin-left: 3%;
+    padding: 0 10px;
+}
+
+.personal_manager h3 {
+    margin-left: 1%;
+}
+
+.personal_arrow {
+    
+}
+
+.first_underContent {
+    width: 100%;
+}

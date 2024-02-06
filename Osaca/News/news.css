@@ -1,0 +1,45 @@
+
+.news_ {
+    margin: 2% 22% 0 22%;
+}
+
+.news_block {
+    margin-bottom: 4%;
+    display: flex;
+
+}
+.news_block img {
+    width: 100%;
+    height: 250px;
+    border-radius: 40px;
+    margin-right: 2%;
+}
+
+.news_text {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.news_text h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 3% 0 5% 0;
+}
+.news_text p {
+    font-size: 24px;
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 499px) {
+    .news_ {
+        margin: 2% 10%;
+    }
+    .news_block img {
+        filter: blur(1px);
+    }
+    .news_text {
+        width: 80%;
+        text-align: center;
+        color: white;
+    }
+}

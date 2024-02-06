@@ -1,0 +1,42 @@
+@import url(/Header/header.css);
+@import url(./News/news.css);
+@import url(./Pesonal/personal.css);
+@import url(./Profile/profile.css);
+@import url(./Main/main.css); 
+@import url(./shared/components/banner/banner.css);
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.basicContent {
+    margin: 2% 15% 0 15%;
+}
+
+@media screen and (max-width: 499px) {
+    body {
+        font-size: 14px;
+    }
+}
