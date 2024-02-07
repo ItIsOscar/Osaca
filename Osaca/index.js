@@ -5,7 +5,9 @@ import { News } from "./News/news.js"
 import { Personal } from "./Pesonal/personal.js"
 import { Profile } from "./Profile/profile.js"
 
+import { Banner } from "./shared/components/banner/banner.js"
 import { TaskBar } from "./shared/components/taskBar/taskBar.js"
+
 
 import { navigation } from "./shared/logic/navigation.js"
 
@@ -14,7 +16,9 @@ customElements.define("app-main", MainPage)
 customElements.define("app-news", News)
 customElements.define("app-profile", Profile)
 customElements.define("app-personal", Personal)
+
 customElements.define("app-taskbar", TaskBar)
+customElements.define("app-banner", Banner)
 
 navigation.siteStart()
 

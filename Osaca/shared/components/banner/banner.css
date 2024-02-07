@@ -1,11 +1,11 @@
 
-.banner_ {
+.banner_visiblePart {
     margin: 0 7% 5% 7%;
     height: 280px;
     overflow: hidden;
 }
 
-.banner_visiblePart {
+.banner_line {
     display: flex;
     width: 300%;
 }

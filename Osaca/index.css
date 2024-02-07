@@ -4,6 +4,7 @@
 @import url(./Profile/profile.css);
 @import url(./Main/main.css); 
 @import url(./shared/components/banner/banner.css);
+@import url(./shared/components/taskBar/taskBar.css);
 
 
 * {

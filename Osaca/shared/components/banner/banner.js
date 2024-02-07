@@ -1,28 +1,33 @@
 import { createElementAndProperty } from "../../helper/CreateElementAndProperty.js"
 
 export function  createHTMLBanner(content) {
-    class BannerPage {
-        constructor(divElement) {
-            this.divElement = divElement
-        }
-        currentPage = 1
-    }
-    let banner =  new BannerPage(createElementAndProperty("div", content, 'banner_')) 
-    let bannerContent = createElementAndProperty("div", banner.divElement, "banner_visiblePart")
-    let pic = ["https://print4you.com.ua/upload/resize_cache/iblock/a6c/444_480_1/a6c91a8d37cd6f789f0eb84053661b3b.jpg", "https://artsalon.biz/wp-content/uploads/abstract-print-art-painting-60x90-cm.webp", "https://art-kvartira.ru/wp-content/uploads/2023/03/alko30x50.jpg"]
-    for(let current = 0; current < pic.length; current++) {
-        let block = createElementAndProperty("div", bannerContent, "banner_pageContent", "id", `block${current + 1}`)
-        createElementAndProperty("img", block, undefined, 'src', `${pic[current]}`)
-        let blockText = createElementAndProperty("div", block, "banner_text")
-        createElementAndProperty("h3", blockText, undefined, "textContent", "Спокойный канеки")
-        createElementAndProperty("p", blockText, undefined, "textContent", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-    }
-    let blockPages = [block1, block2, block3]
-    let result = {
-        blockPages,
-        banner
-    }
-    return result
+    // class BannerPage {
+    //     constructor(divElement) {
+    //         this.divElement = divElement
+    //     }
+    //     currentPage = 1
+    // }
+    
+    // let banner =  new BannerPage(createElementAndProperty("div", content, 'banner_visiblePart')) 
+    
+    // let bannerContent = createElementAndProperty("div", banner.divElement, "banner_line")
+    
+    // let pic = ["https://print4you.com.ua/upload/resize_cache/iblock/a6c/444_480_1/a6c91a8d37cd6f789f0eb84053661b3b.jpg", "https://artsalon.biz/wp-content/uploads/abstract-print-art-painting-60x90-cm.webp", "https://art-kvartira.ru/wp-content/uploads/2023/03/alko30x50.jpg"]
+    // for(let current = 0; current < pic.length; current++) {
+    //     let block = createElementAndProperty("div", bannerContent, "banner_pageContent", "id", `block${current + 1}`)
+    //     createElementAndProperty("img", block, undefined, 'src', `${pic[current]}`)
+        
+    //     let blockText = createElementAndProperty("div", block, "banner_text")
+    //     createElementAndProperty("h3", blockText, undefined, "textContent", "Спокойный канеки")
+    //     createElementAndProperty("p", blockText, undefined, "textContent", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
+    // }
+   
+    // let blockPages = [block1, block2, block3]
+    // let result = {
+    //     blockPages,
+    //     banner
+    // }
+    // return result
 }
 
 export function bannerLogic(bannerBlocks, banner) { 
@@ -36,4 +41,77 @@ export function bannerLogic(bannerBlocks, banner) {
         behavior: "smooth",
     })
     console.log(banner.currentPage)
+}
+
+export class Banner extends HTMLElement {
+    constructor() {
+        super()
+    }
+
+    connectedCallback() {
+        let logic = this.mkBanner()
+        
+        setInterval(() => {
+            this.mkBannerLogic(logic.blocks, logic.visiblePart)
+        }, 5000)     
+    }
+
+    mkBanner() {
+        let visiblePart = {
+            divElement: createElementAndProperty("div", this, 'banner_visiblePart'),
+            currentPage: 1
+        }
+        let bannerContent = createElementAndProperty("div", visiblePart.divElement, "banner_line")
+        let blocks = this.mkBannerBlocks(bannerContent)
+        const LOGIC = {
+            blocks,
+            visiblePart,
+        }
+        return LOGIC
+    }
+
+    mkBannerBlocks(bannerContent) {
+        let blocks = []
+        for(let current = 0; current < 3; current++) {
+            let block = createElementAndProperty("div", bannerContent, "banner_pageContent")
+            this.mkBlockPic(block, current)
+            this.mkBlockText(block)
+            blocks.push(block)
+        }
+        return blocks
+    }
+
+    mkBlockPic(block, current) {
+        let pic = ["https://print4you.com.ua/upload/resize_cache/iblock/a6c/444_480_1/a6c91a8d37cd6f789f0eb84053661b3b.jpg", "https://artsalon.biz/wp-content/uploads/abstract-print-art-painting-60x90-cm.webp", "https://art-kvartira.ru/wp-content/uploads/2023/03/alko30x50.jpg"]
+        createElementAndProperty("img", block, undefined, 'src', `${pic[current]}`)
+    }
+
+    mkBlockText(block) {
+        let blockText = createElementAndProperty("div", block, "banner_text")
+        this.mkBlockTitle(blockText)
+        this.mkBlockDisc(blockText)
+    }
+
+    mkBlockTitle(blockText) {
+        createElementAndProperty("h3", blockText, undefined, "textContent", "Спокойный канеки")
+    }
+
+    mkBlockDisc(blockText) {
+        createElementAndProperty("p", blockText, undefined, "textContent", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
+
+    }
+
+    mkBannerLogic(blocks, visiblePart) {
+        if(visiblePart.currentPage == blocks.length ) {
+            visiblePart.currentPage = 1
+        } else {
+            visiblePart.currentPage++
+        }
+        blocks[visiblePart.currentPage - 1].scrollIntoView({
+            inline: "center",
+            behavior: "smooth",
+            block: "end"
+        })
+        console.log(visiblePart.currentPage)
+    }
 }

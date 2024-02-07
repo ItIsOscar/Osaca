@@ -29,10 +29,7 @@ export class MainPage extends HTMLElement {
     }
 
     mkBanner() {
-        let result = createHTMLBanner(this)
-        setInterval(() => {
-            bannerLogic(result.blockPages, result.banner)
-        }, 5000)
+        createElementAndProperty("app-banner", this)
     }
 
     mkDisciption() {
